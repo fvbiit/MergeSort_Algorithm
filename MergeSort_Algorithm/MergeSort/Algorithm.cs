@@ -10,17 +10,17 @@ namespace MergeSort_Algorithm.MergeSort
     public class Algorithm
     {
 
-        public void Divide_Merge_Sort(int[] unsorted_values, int left_index, int right_index)
+        public void DivideMergeSort(int[] unsorted_values, int left_index, int right_index)
         {
             if (right_index > left_index)
             {
                 int middle_index = (left_index + right_index) / 2;
 
                 //Recursive Function Call for Left
-                Divide_Merge_Sort(unsorted_values, left_index, middle_index);
+                DivideMergeSort(unsorted_values, left_index, middle_index);
 
                 //Recursive Function Call for Right
-                Divide_Merge_Sort(unsorted_values, middle_index+1, right_index);
+                DivideMergeSort(unsorted_values, middle_index+1, right_index);
 
                 Merge(unsorted_values, left_index, middle_index, right_index);
 
@@ -76,7 +76,7 @@ namespace MergeSort_Algorithm.MergeSort
             Console.WriteLine("Your given array is");
             Console.WriteLine(string.Join(" ", unsorted_values));
 
-            alg.Divide_Merge_Sort(unsorted_values, 0, unsorted_values.Length - 1);
+            alg.DivideMergeSort(unsorted_values, 0, unsorted_values.Length - 1);
 
             Console.WriteLine("\nYour Sorted array is");
             Console.WriteLine(string.Join(" ", unsorted_values));
